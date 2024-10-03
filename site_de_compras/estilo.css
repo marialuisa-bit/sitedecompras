@@ -1,0 +1,162 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Unbounded&display=swap');
+
+* {
+    border: 0;
+    margin: 0;
+    text-decoration: none;
+    --navy-blue: #003057;
+    --light-blue: #81b3ff;
+    --white: #eaecff;
+}
+
+body {
+    background-color: var(--light-blue);
+}
+
+header#cabecalho {
+    background-color:var(--navy-blue);
+    width: auto;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    height: 160px;
+}
+
+header#cabecalho lord-icon#logo {
+    margin-top: 40px;
+}
+
+header#cabecalho a#login {
+    text-align: center;
+    position: absolute;
+    color: white;
+    left: 1200px;
+    top: 60px;
+    transition: background-color 1s;
+}
+
+header#cabecalho a#login:hover {
+    color: black;
+    background-color: white;
+}
+
+header#cabecalho lord-icon#pesquisa {
+    border-radius: 20px;
+    height:40px;
+    width:450px;
+    position: absolute;
+    left: 436px;
+    top: 37px;
+}
+
+nav#categorias {
+    display: block;
+}
+
+nav#categorias ul {
+    list-style: none;
+    position: absolute;
+    top: 120px;
+    left: 367px;
+}
+
+nav#categorias li {
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav#categorias a {
+    color: white;
+    transition: 0.5s ease-out;
+}
+
+nav#categorias a:hover {
+    transition: 0.5s ease-in-out;
+    font-size: 1.1rem;
+}
+
+
+section#corpo {
+    display: block;
+    width: 1200px;
+    margin: 20px auto 0px auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section#corpo h2#titulo {
+    text-align: center;
+    margin-top: 30px;
+}
+
+section#corpo img#publi {
+    width: 60%;
+    height: 40%;
+    margin: auto;
+    display: block;
+    box-shadow: 0px 0px 2px black;
+}
+
+table.produtos {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table.produtos td {
+    border: 50px solid rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    transition: background-color 0.5s;
+    padding: 10px 10px 10px 10px;
+}
+
+table.produtos td:hover {
+    text-decoration: underline;
+    background-color:var(--white);
+}
+
+table.produtos tr {
+    display: inline-block;
+}
+
+table.produtos a {
+    color:  black;
+    transition: background-color 1s;
+}
+
+table.produtos a.legenda {
+    transition: color 1s;
+}
+
+table.produtos a.legenda:hover {
+    color: white;
+}
+
+footer#rodape {
+    color: white;
+    background-color: var(--navy-blue);
+    clear: both;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer#rodape a {
+    color: var(--white);
+    transition: ease-out .2s;
+}
+
+footer#rodape a:hover {
+    color: var(--light-blue);
+    transition: ease-in 0.2s;
+    font-size: 1.1rem;
+}
+
+footer#rodape p {
+    text-align: center;
+}
