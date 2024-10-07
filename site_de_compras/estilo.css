@@ -15,6 +15,7 @@ h1#titulo {
   color: var(--white);
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;
+  padding-top: 1.5rem;
 }
 
 header#cabecalho {
@@ -46,7 +47,13 @@ header#cabecalho a#cadastro {
   text-decoration: none;
 }
 
-header#cabecalho a.entrar:hover {
+header#cabecalho a#login:hover {
+  color: var(--navy-blue);
+  background-color: white;
+  text-decoration: none;
+}
+
+header#cabecalho a#cadastro:hover {
   color: var(--navy-blue);
   background-color: white;
   text-decoration: none;
@@ -162,3 +169,4 @@ input#pesquisa {
   border-radius: 3rem;
   padding-left: 1.1rem;
 }
+
