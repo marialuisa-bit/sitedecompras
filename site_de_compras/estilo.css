@@ -29,31 +29,13 @@ header#cabecalho a#login {
   text-align: center;
   position: absolute;
   color: var(--white);
-  left: 1200px;
+  right: 0%;
   top: 30px;
   transition: background-color 1s;
   text-decoration: none;
 }
 
-header#cabecalho a#cadastro {
-  border-radius: 3rem;
-  padding: 1.1rem;
-  text-align: center;
-  position: absolute;
-  color: var(--white);
-  left: 1200px;
-  top: 110px;
-  transition: background-color 0.5s;
-  text-decoration: none;
-}
-
 header#cabecalho a#login:hover {
-  color: var(--navy-blue);
-  background-color: white;
-  text-decoration: none;
-}
-
-header#cabecalho a#cadastro:hover {
   color: var(--navy-blue);
   background-color: white;
   text-decoration: none;
@@ -89,10 +71,8 @@ nav#categorias a:hover {
 }
 
 section#corpo {
-  display: block;
-  width: 1200px;
-  margin: 20px auto 0px auto;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sa\ns-serif;
+  width: 80%;
 }
 
 section#corpo h2#titulo {
@@ -138,7 +118,23 @@ table.produtos a.legenda:hover {
   color: white;
 }
 
+main {
+  position: relative;
+  padding-bottom: 6rem;
+}
+
+div#interface {
+  display: flex;
+  justify-content: center;
+}
+
 footer#rodape {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 6rem;
   color: white;
   background-color: var(--navy-blue);
   clear: both;
