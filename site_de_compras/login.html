@@ -27,36 +27,107 @@
         </lord-icon>
       </a>
     </header>
-    <div id="interface">
-      <footer id="rodape">
-        <p>
-          Copyright &copy; 2024 - por Gustavo Beirão e Maria Luisa Gomes<br />
-          <a href="https://www.instagram.com" target="_blank"
-            ><script src="https://cdn.lordicon.com/lordicon.js"></script>
-            <lord-icon
-              src="https://cdn.lordicon.com/ewswvzmw.json"
-              trigger="hover"
-              stroke="bold"
-              colors="primary:#ffffff,secondary:#ffffff"
-              style="width: 40px; height: 40px"
-            >
-            </lord-icon
-          ></a>
+    <main>
+      <div id="interface">
+        <div class="card" style="width: 30%">
+          <div class="card-header">Login</div>
+          <div class="card-body">
+            <form action="">
+              <div class="form-group">
+                <label for="email-login">Email:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email-login"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="senha-login">Senha:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="senha-login"
+                  placeholder="Senha"
+                  required
+                />
+                <a href="trocasenha.html" class="card-subtitle mb-2 text-muted"
+                  >Esqueci minha senha</a
+                >
+              </div>
 
-          <a href="https://whatsapp.com" target="_blank"
-            ><script src="https://cdn.lordicon.com/lordicon.js"></script>
-            <lord-icon
-              id="redessociais"
-              src="https://cdn.lordicon.com/dnphlhar.json"
-              trigger="hover"
-              stroke="bold"
-              colors="primary:#ffffff,secondary:#ffffff"
-              style="width: 40px; height: 40px"
-            >
-            </lord-icon
-          ></a>
-        </p>
-      </footer>
-    </div>
+              <p class="card-text">Tipo de conta:</p>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="opcoes-de-conta"
+                  id="opcao-comprador"
+                  value="comprador"
+                  checked
+                />
+                <label class="form-check-label" for="opcao-comprador"
+                  >Comprador</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="opcoes-de-conta"
+                  id="opcao-vendedor"
+                  value="vendedor"
+                />
+                <label class="form-check-label" for="opcao-vendedor"
+                  >Vendedor</label
+                >
+              </div>
+              <div>
+                <button type="submit" class="btn btn-primary" id="gpbtnlogin">
+                  Login
+                </button>
+                <a
+                  href="cadastro.html"
+                  class="btn btn-outline-primary"
+                  id="gpbtnlogin"
+                >
+                  Cadastrar-se
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <footer id="rodape">
+          <p>
+            Copyright &copy; 2024 - por Gustavo Beirão e Maria Luisa Gomes<br />
+            <a href="https://www.instagram.com" target="_blank"
+              ><script src="https://cdn.lordicon.com/lordicon.js"></script>
+              <lord-icon
+                src="https://cdn.lordicon.com/ewswvzmw.json"
+                trigger="hover"
+                stroke="bold"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style="width: 40px; height: 40px"
+              >
+              </lord-icon
+            ></a>
+
+            <a href="https://whatsapp.com" target="_blank"
+              ><script src="https://cdn.lordicon.com/lordicon.js"></script>
+              <lord-icon
+                id="redessociais"
+                src="https://cdn.lordicon.com/dnphlhar.json"
+                trigger="hover"
+                stroke="bold"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style="width: 40px; height: 40px"
+              >
+              </lord-icon
+            ></a>
+          </p>
+        </footer>
+      </div>
+    </main>
   </body>
 </html>
