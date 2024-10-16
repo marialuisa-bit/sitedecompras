@@ -16,6 +16,8 @@ h1#titulo {
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;
   padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 header#cabecalho {
@@ -25,20 +27,25 @@ header#cabecalho {
 
 header#cabecalho a#login {
   border-radius: 3rem;
-  padding: 1.1rem;
+  padding: 1rem;
   text-align: center;
   position: absolute;
   color: var(--white);
   right: 0%;
-  top: 30px;
+  top: 10px;
   transition: background-color 1s;
   text-decoration: none;
 }
 
-header#cabecalho a#login:hover {
-  color: var(--navy-blue);
-  background-color: white;
-  text-decoration: none;
+img#icon-login {
+  width: 3rem;
+  height: 3rem;
+}
+
+img#icon-login:hover {
+  width: 3.4rem;
+  height: 3.4rem;
+  transition: 0.5s;
 }
 
 nav#categorias {
@@ -121,11 +128,15 @@ table.produtos a.legenda:hover {
 main {
   position: relative;
   padding-bottom: 6rem;
+  height: 100%;
+  width: 100%;
 }
 
 div#interface {
   display: flex;
   justify-content: center;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
 }
 
 footer#rodape {
@@ -166,3 +177,21 @@ input#pesquisa {
   padding-left: 1.1rem;
 }
 
+.form-group {
+  padding-bottom: 1rem;
+}
+
+p.card-text {
+  margin-bottom: 0.5rem;
+}
+
+#gpbtnlogin {
+  margin-top: 1.3rem;
+  margin-right: 1.5rem;
+  padding-inline: 1.5rem;
+}
+
+div.card {
+  border-color: #003057;
+  border-width: 1.5px;
+}
