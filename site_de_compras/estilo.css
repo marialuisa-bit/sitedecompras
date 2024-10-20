@@ -195,3 +195,61 @@ div.card {
   border-color: #003057;
   border-width: 1.5px;
 }
+
+table#pagvend {
+  width: 80%;
+}
+
+table#pagvend td {
+  padding-right: 1%;
+  padding-left: 1%;
+  padding-top: 2rem;
+}
+
+div.itemvend {
+  margin: 1rem;
+}
+
+.nomevend {
+  font-size: larger;
+  font-weight: bold;
+  width: 30%;
+}
+
+.descricaovend {
+  width: 50%;
+  border-bottom: solid 2px;
+  border-bottom-color: var(--navy-blue);
+}
+
+.precovend {
+  font-size: large;
+  width: 15%;
+  font-weight: bold;
+  border-bottom: solid 2px;
+  border-bottom-color: var(--navy-blue);
+}
+
+.dispvend,
+.vendidosvend {
+  font-size: smaller;
+  border-bottom: solid 2px;
+  border-bottom-color: var(--navy-blue);
+}
+
+.imgvend {
+  border-bottom: solid 2px;
+  border-bottom-color: var(--navy-blue);
+}
+
+.titulovend {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#cadastrodeprodutos div.card {
+  margin-left: 10%;
+  margin-right: auto;
+  margin-top: 5rem;
+}
