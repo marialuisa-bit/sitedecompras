@@ -171,7 +171,8 @@ lord-icon#redessociais {
   margin-left: 0.5rem;
 }
 
-input#pesquisa {
+input#pesquisa,
+input#pesquisavend {
   border: 2px solid var(--white);
   border-radius: 3rem;
   padding-left: 1.1rem;
@@ -218,7 +219,7 @@ div.itemvend {
 
 .descricaovend {
   width: 50%;
-  border-bottom: solid 2px;
+  border-bottom: solid 1px;
   border-bottom-color: var(--navy-blue);
 }
 
@@ -226,19 +227,19 @@ div.itemvend {
   font-size: large;
   width: 15%;
   font-weight: bold;
-  border-bottom: solid 2px;
+  border-bottom: solid 1px;
   border-bottom-color: var(--navy-blue);
 }
 
 .dispvend,
 .vendidosvend {
   font-size: smaller;
-  border-bottom: solid 2px;
+  border-bottom: solid 1px;
   border-bottom-color: var(--navy-blue);
 }
 
 .imgvend {
-  border-bottom: solid 2px;
+  border-bottom: solid 1px;
   border-bottom-color: var(--navy-blue);
 }
 
@@ -252,4 +253,140 @@ div.itemvend {
   margin-left: 10%;
   margin-right: auto;
   margin-top: 5rem;
+}
+
+div#editor-de-conta {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+div#editor-de-conta div.card-body h2.card-title {
+  font-size: larger;
+  font-weight: 500;
+}
+
+div#editor-de-conta div.card-body h3.card-subtitle {
+  font-size: medium;
+  font-weight: 400;
+}
+
+div#editor-de-conta div.card-body a.btn {
+  margin-top: 4px;
+  height: 2rem;
+  color: white;
+  font-size: small;
+}
+
+#informacoesconta div.card {
+  margin-left: 10%;
+  margin-right: auto;
+  margin-top: 5rem;
+}
+
+#btninfconta {
+  margin-top: 1.3rem;
+  margin-right: 1.5rem;
+  padding-inline: 1.5rem;
+}
+
+#pagprod {
+  width: 90%;
+  margin-right: 10%;
+  margin-top: -1.4rem;
+}
+
+#img-pagprod {
+  width: 60%;
+  height: auto;
+}
+
+#nome-pagprod {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+#preco-pagprod {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#butaocarrinho-pagprod {
+  margin-top: 2rem;
+}
+
+#butaocomprar-pagprod {
+  margin-top: 0.2rem;
+}
+
+#quant-pagprod {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+#quant-pagprod div {
+  margin-top: 0.5rem;
+  margin-bottom: 8rem;
+}
+
+#descricao-pagprod div {
+  margin-top: 1rem;
+  margin-left: 4%;
+  margin-right: 4%;
+  font-size: 1.1rem;
+}
+
+#carrinho {
+  width: 90%;
+}
+
+.excluircarrinho {
+  border-bottom: solid 1px;
+  border-bottom-color: var(--navy-blue);
+  padding-left: 3px;
+}
+
+#marcadorcarrinho {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#itemmarcadorcarrinho {
+  margin-top: 2.5rem;
+  float: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#marcatudo {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+#divmarcatudo {
+  margin-top: 4rem;
+}
+
+#labelmarcatudo {
+  font-size: 1.2rem;
+  margin-left: 0.2rem;
+}
+
+#limparcarrinho {
+  margin-top: 4rem;
+  margin-left: 0.5rem;
+}
+
+#valortotalcarrinho {
+  margin-top: 4rem;
+  font-weight: bolder;
+  margin-left: 1.5rem;
+}
+
+#comprartudo {
+  margin-top: 4rem;
+  margin-left: 2.5rem;
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.2rem;
 }
