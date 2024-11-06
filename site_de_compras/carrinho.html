@@ -30,15 +30,18 @@
         <tr>
           <td>
             <label for="pesquisa"
-              ><lord-icon
-                id="pesquisa"
-                src="https://cdn.lordicon.com/kkvxgpti.json"
-                trigger="hover"
-                colors="primary:#ffffff"
-                style="width: 50px; height: 50px"
-              >
-              </lord-icon
-            ></label>
+              ><a href="paginapesquisa.html"
+                ><lord-icon
+                  id="pesquisa"
+                  src="https://cdn.lordicon.com/kkvxgpti.json"
+                  trigger="hover"
+                  colors="primary:#ffffff"
+                  style="width: 50px; height: 50px"
+                >
+                </lord-icon
+              ></a>
+              ></label
+            >
           </td>
           <td>
             <input
@@ -173,6 +176,24 @@
             </td>
           </tr>
           <tr>
+            <td id="marcadorcarrinho"></td>
+            <td rowspan="2" class="imgvend"></td>
+            <td colspan="3" class="nomevend">FRETE</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                A compra será enviada para o endereço registrado na conta e o
+                pagamento será feito pela conta registrada. Para aterações,
+                modificar diretamente na conta. Isso é uma solução
+                provisoria!!!!
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="excluircarrinho"></td>
+
+            <td colspan="4" class="precovend">R$20,00</td>
+          </tr>
+          <tr>
             <td></td>
             <td>
               <div class="form-check" id="divmarcatudo">
@@ -195,14 +216,17 @@
                 Limpar carrinho
               </button>
             </td>
-            <td><div id="valortotalcarrinho">Valor total: R$2.800,00</div></td>
-            <td>
-              <a
-                href="paginacompra.html"
-                class="btn btn-success"
-                id="comprartudo"
-                >Comprar</a
-              >
+            <td><div id="valortotalcarrinho">Valor total: R$2.820,00</div></td>
+            <td style="display: inline-flex">
+              <button class="btn btn-success" id="comprartudo">
+                Finalizar Compra
+              </button>
+              <input
+                type="text"
+                class="form-control"
+                id="cumpomdesconto"
+                placeholder="Aplique um Cupom!"
+              />
             </td>
           </tr>
         </table>
