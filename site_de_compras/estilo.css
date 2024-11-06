@@ -383,10 +383,16 @@ div#editor-de-conta div.card-body a.btn {
   margin-left: 1.5rem;
 }
 
-#comprartudo {
+#comprartudo,
+#cumpomdesconto {
   margin-top: 4rem;
-  margin-left: 2.5rem;
+  margin-left: 3rem;
   width: 10rem;
   height: 3rem;
-  font-size: 1.2rem;
+}
+
+#cumpomdesconto {
+  font-size: 0.9rem;
+  width: 14rem;
+  border: solid 1px;
 }
