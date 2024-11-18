@@ -1,5 +1,6 @@
 create table usuario (
     idusuario integer not null primary key,
+    senha varchar(40) not null,
     nome varchar(60) not null,
     cidade varchar(30) null,
     bairro varchar(30) null,
@@ -21,6 +22,7 @@ create table vendedor (
 
 create table cliente (
     idusuario integer not null primary key,
+    datanasc date not null,
     cpf varchar(11) not null,
     foreign key(idusuario) references usuario(idusuario)
 );
