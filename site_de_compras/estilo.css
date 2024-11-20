@@ -188,8 +188,20 @@ p.card-text {
 
 #gpbtnlogin {
   margin-top: 1.3rem;
-  margin-right: 1.5rem;
-  padding-inline: 1.5rem;
+  width: 60%;
+  margin-left: 20%;
+}
+
+#gpbtnlogincad {
+  margin-top: 1.3rem;
+  width: 35%;
+  margin-inline: 7%;
+}
+
+a#cadastro:hover {
+  color: var(--navy-blue) !important;
+  transition: 0.3s;
+  font-size: larger;
 }
 
 div.card {
