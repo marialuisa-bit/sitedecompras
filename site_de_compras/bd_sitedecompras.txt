@@ -29,6 +29,7 @@ create table cliente (
 
 create table produto (
     idproduto integer not null primary key,
+    imagem varchar(100) not null,
     nome varchar(30) not null,
     qntestoque integer not null,
     descricao varchar(120),
