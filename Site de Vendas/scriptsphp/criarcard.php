@@ -2,7 +2,7 @@
 
 $card = $connectbd->query("select imagem, nome, preco, descricao from produto")->fetch_assoc();
 
-for($i = 1; $i >= 16; $i++){
+for($i = 1; $i >= 8; $i++){
     $result = $card->fetch_assoc();
     $imagem = $result["imagem"];
     $nome = $result["nome"];
