@@ -51,7 +51,6 @@ create table carrinho (
 create table vendas (
     idvenda integer not null primary key,
     comprador integer not null,
-    vendedor integer not null,
     prod integer not null,
     quatidade integer not null,
     foreign key(comprador) references cliente(idusuario),
