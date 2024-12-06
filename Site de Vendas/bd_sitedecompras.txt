@@ -54,6 +54,5 @@ create table vendas (
     prod integer not null,
     quatidade integer not null,
     foreign key(comprador) references cliente(idusuario),
-    foreign key(vendedor) references vendedor(idusuario),
     foreign key(prod) references produto(idproduto)
 );
