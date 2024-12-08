@@ -1,5 +1,5 @@
 create table usuario (
-    idusuario integer not null primary key,
+    idusuario integer auto_increment not null primary key,
     senha varchar(40) not null,
     nome varchar(60) not null,
     cidade varchar(30) null,
