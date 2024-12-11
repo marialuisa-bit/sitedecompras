@@ -11,22 +11,23 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script src="js/verifeditprod.js" defer></script>
   </head>
   <body>
     <header id="cabecalho">
       <a href="paginaVendedor.html">
         <h1 id="titulo">Site de Compras</h1>
       </a>
-      
-        <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        <lord-icon
-          id="logo"
-          src="https://cdn.lordicon.com/mfmkufkr.json"
-          trigger="hover"
-          colors="primary:#ffffff"
-          style="width: 250px; height: 150px"
-        >
-        </lord-icon>
+
+      <script src="https://cdn.lordicon.com/lordicon.js"></script>
+      <lord-icon
+        id="logo"
+        src="https://cdn.lordicon.com/mfmkufkr.json"
+        trigger="hover"
+        colors="primary:#ffffff"
+        style="width: 250px; height: 150px"
+      >
+      </lord-icon>
       <div class="card" id="editor-de-conta" style="width: 13rem">
         <div class="card-header">Sua Conta</div>
         <div class="card-body">
@@ -44,11 +45,23 @@
       </div>
       <nav id="categorias">
         <ul>
-          <li><a href="paginapesquisa.html" div class='btn btn-primary'>Eletronicos</a></li>
-          <li><a href="paginapesquisa.html" class='btn btn-primary'>Roupas</a></li>
-          <li><a href="paginapesquisa.html" class='btn btn-primary'>Papelaria</a></li>
-          <li><a href="paginapesquisa.html" class='btn btn-primary'>Infantil</a></li>
-          <li><a href="paginapesquisa.html" class='btn btn-primary'>Diversos</a></li>
+          <li>
+            <a href="paginapesquisa.html" div class="btn btn-primary"
+              >Eletronicos</a
+            >
+          </li>
+          <li>
+            <a href="paginapesquisa.html" class="btn btn-primary">Roupas</a>
+          </li>
+          <li>
+            <a href="paginapesquisa.html" class="btn btn-primary">Papelaria</a>
+          </li>
+          <li>
+            <a href="paginapesquisa.html" class="btn btn-primary">Infantil</a>
+          </li>
+          <li>
+            <a href="paginapesquisa.html" class="btn btn-primary">Diversos</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -151,23 +164,30 @@
                       ></textarea>
                     </div>
 
-                    <div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-around;
+                        margin-top: 5px;
+                      "
+                    >
                       <button
-                        type="submit"
+                        type="button"
                         class="btn btn-primary"
-                        id="gpbtnlogin"
+                        id="atlzprod"
                       >
                         Atualizar produto
                       </button>
                       <button
-                        type="submit"
+                        type="button"
                         class="btn btn-danger"
-                        id="gpbtnlogin"
+                        id="excluirprod"
                       >
                         Excluir protudo
                       </button>
                     </div>
                   </form>
+                  <div id="mensagensErro" style="color: red"></div>
                 </div>
               </div>
             </td>

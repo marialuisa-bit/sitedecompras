@@ -1,3 +1,5 @@
+create database "site de vendas";
+
 create table usuario (
     idusuario integer not null auto_increment primary key,
     senha varchar(40) not null,

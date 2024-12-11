@@ -1,4 +1,6 @@
-<?php include './conect.php'?>
+<?php 
+include './conect.php';
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,7 +20,7 @@
     <header id="cabecalho">
       <a href="home.php">
       <h1 id="titulo">Site de Compras</h1></a>
-      <a href="carrinho.html">
+      <a href="carrinho.php">
         <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
           id="logo"
@@ -57,7 +59,7 @@
           </td>
         </tr>
       </table>
-      <a href="login.html" class="entrar" id="login"
+      <a href="login.php" class="entrar" id="login"
         ><img id="icon-login" src="img/icon.png" alt="Login"
       /></a>
 
@@ -81,8 +83,6 @@
              <?php 
              include ".\scriptsphp\criarcard.php"
              ?>
-
-
             </table>
           </figure>
         </section>

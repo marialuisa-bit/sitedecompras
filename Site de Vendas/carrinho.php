@@ -1,0 +1,281 @@
+<?php 
+include './conect.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>home</title>
+
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header id="cabecalho">
+      <a href="home.php">
+      <h1 id="titulo">Site de Compras</h1></a>
+      <a href="carrinho.html">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon
+          id="logo"
+          src="https://cdn.lordicon.com/mfmkufkr.json"
+          trigger="hover"
+          colors="primary:#ffffff"
+          style="width: 250px; height: 150px"
+        >
+        </lord-icon>
+      </a>
+      <table id="busca">
+        <tr>
+          <td>
+            <label for="pesquisa"
+              ><a href="paginapesquisa.html"
+                ><lord-icon
+                  id="pesquisa"
+                  src="https://cdn.lordicon.com/kkvxgpti.json"
+                  trigger="hover"
+                  colors="primary:#ffffff"
+                  style="width: 50px; height: 50px"
+                >
+                </lord-icon
+              ></a>
+              ></label
+            >
+          </td>
+          <td>
+            <input
+              type="text"
+              id="pesquisa"
+              name="pesquisa"
+              placeholder="Pesquise aqui!"
+            />
+          </td>
+        </tr>
+      </table>
+      <nav id="categorias">
+        <ul>
+          <li><a href="paginapesquisa.html" div class='btn btn-primary'>Eletronicos</a></li>
+          <li><a href="paginapesquisa.html" class='btn btn-primary'>Roupas</a></li>
+          <li><a href="paginapesquisa.html" class='btn btn-primary'>Papelaria</a></li>
+          <li><a href="paginapesquisa.html" class='btn btn-primary'>Infantil</a></li>
+          <li><a href="paginapesquisa.html" class='btn btn-primary'>Diversos</a></li>
+        </ul>
+      </nav>
+      <div class="card" id="editor-de-conta" style="width: 13rem">
+        <div class="card-header">Sua Conta</div>
+        <div class="card-body">
+          <h2 class="card-title">Nome</h2>
+          <h3 class="card-subtitle">Tipo de conta</h3>
+
+          <a class="btn btn-secondary" href="informacoesconta.html"
+            >Inforções da conta</a
+          >
+
+          <a class="btn btn-secondary" href="login.html">Trocar de Conta</a>
+
+          <a class="btn btn-secondary" href="home.html">sair da Conta</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="interface">
+        <table id="carrinho">
+          <tr>
+            <td colspan="6">
+              <h1 style="text-align: center; margin-bottom: 2rem">
+                Seu Carrinho
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td id="marcadorcarrinho">
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="itemmarcadorcarrinho"
+                  checked
+                />
+              </div>
+            </td>
+            <td rowspan="2" class="imgvend">
+              <div class="itemvend">
+                <a href="paginaproduto.html"
+                  ><div
+                    style="background-color: black; width: 10rem; height: 10rem"
+                  ></div
+                ></a>
+              </div>
+            </td>
+            <td colspan="3" class="nomevend">Nome do produto</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="excluircarrinho">
+              <div class="itemvend">
+                <button class="btn btn-danger">Exluir</button>
+              </div>
+            </td>
+            <td class="precovend">R$1400, 00</td>
+            <td class="dispvend">Valor unit. R$1400,00</td>
+            <td class="vendidosvend">
+              <input
+                class="form-control"
+                type="number"
+                value="1"
+                style="width: 70%; margin-left: 20%"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td id="marcadorcarrinho">
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="itemmarcadorcarrinho"
+                  checked
+                />
+              </div>
+            </td>
+            <td rowspan="2" class="imgvend">
+              <div class="itemvend">
+                <a href="paginaproduto.html"
+                  ><div
+                    style="background-color: black; width: 10rem; height: 10rem"
+                  ></div
+                ></a>
+              </div>
+            </td>
+            <td colspan="3" class="nomevend">Nome do produto</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="excluircarrinho">
+              <div class="itemvend">
+                <button class="btn btn-danger">Exluir</button>
+              </div>
+            </td>
+            <td class="precovend">R$1400, 00</td>
+            <td class="dispvend">Valor unit. R$1400,00</td>
+            <td class="vendidosvend">
+              <input
+                class="form-control"
+                type="number"
+                value="1"
+                style="width: 70%; margin-left: 20%"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td id="marcadorcarrinho"></td>
+            <td rowspan="2" class="imgvend"></td>
+            <td colspan="3" class="nomevend">FRETE</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                A compra será enviada para o endereço registrado na conta e o
+                pagamento será feito pela conta registrada. Para aterações,
+                modificar diretamente na conta. Isso é uma solução
+                provisoria!!!!
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="excluircarrinho"></td>
+
+            <td colspan="4" class="precovend">R$20,00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div class="form-check" id="divmarcatudo">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="marcatudo"
+                  checked
+                />
+                <label
+                  class="form-check-label"
+                  for="marcatudo"
+                  id="labelmarcatudo"
+                  >Selecionar tudo</label
+                >
+              </div>
+            </td>
+            <td colspan="2">
+              <button class="btn btn-danger" id="limparcarrinho">
+                Limpar carrinho
+              </button>
+            </td>
+            <td><div id="valortotalcarrinho">Valor total: R$2.820,00</div></td>
+            <td style="display: inline-flex">
+              <button class="btn btn-success" id="comprartudo">
+                Finalizar Compra
+              </button>
+              <input
+                type="text"
+                class="form-control"
+                id="cumpomdesconto"
+                placeholder="Aplique um Cupom!"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <footer id="rodape">
+          <p>
+            Copyright &copy; 2024 - por Gustavo Beirão e Maria Luisa Gomes<br />
+            <a href="https://www.instagram.com" target="_blank"
+              ><script src="https://cdn.lordicon.com/lordicon.js"></script>
+              <lord-icon
+                src="https://cdn.lordicon.com/ewswvzmw.json"
+                trigger="hover"
+                stroke="bold"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style="width: 40px; height: 40px"
+              >
+              </lord-icon
+            ></a>
+
+            <a href="https://whatsapp.com" target="_blank"
+              ><script src="https://cdn.lordicon.com/lordicon.js"></script>
+              <lord-icon
+                id="redessociais"
+                src="https://cdn.lordicon.com/dnphlhar.json"
+                trigger="hover"
+                stroke="bold"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style="width: 40px; height: 40px"
+              >
+              </lord-icon
+            ></a>
+          </p>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

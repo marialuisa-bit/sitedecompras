@@ -3,14 +3,11 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "site de compras";
+$dbname = "site de vendas";
 
-  // Criar a conexÃ£o
 $connectbd = new mysqli($servername, $username, $password, $dbname);
 
-  // Verificar a conexÃ£o
-if ($connectbd->connect_errno) {
-  die("Connection failed: $connectbd->connect_error");
-};
-
+if ($connectbd->connect_error) {
+    die("Connection failed: " . $connectbd->connect_error);
+}
 ?>

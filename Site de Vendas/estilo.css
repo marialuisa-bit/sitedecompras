@@ -20,7 +20,7 @@ h1#titulo {
   padding-right: 1rem;
 }
 
-a{
+a {
   text-decoration: none !important;
 }
 
@@ -180,7 +180,8 @@ p.card-text {
   margin-bottom: 0.5rem;
 }
 
-#gpbtnlogin {
+#gpbtnlogin,
+#excluirprod {
   margin-top: 1.3rem;
   width: 60%;
   margin-left: 20%;

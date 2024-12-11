@@ -1,20 +1,20 @@
 console.log("Script carregado!");
 
-// Função que valida o CPF
-function validarCPF(cpf) {
-  const regexCPF = /^[0-9]{11}$/; // 11 dígitos, apenas números
-  return regexCPF.test(cpf);
+// Função para validar CNPJ
+function validarCNPJ(cnpj) {
+  const regexCNPJ = /^[0-9]{14}$/; // 14 dígitos, apenas números
+  return regexCNPJ.test(cnpj);
 }
 
 // Função que valida o formato do celular brasileiro
 function validarCelular(celular) {
-  const regex = /^[0-9]{1112}$/; // 11 dígitos, apenas números
+  const regex = /^[0-9]{11,12}$/; // 11 dígitos, apenas números
   return regex.test(celular);
 }
 
 // Função que valida o email
 function validarEmail(email) {
-  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  const regex = /^[a-zA-Z0-9._-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,6}$/;
   return regex.test(email);
 }
 
@@ -35,25 +35,24 @@ document
     let erros = [];
 
     // Obtendo os valores dos campos
-    const nome = document.getElementById("nome-cadastro").value.trim();
-    const cpf = document.getElementById("cpf-cadastro").value.trim();
-    const dataNasc = document.getElementById("datanasc-cadastro").value;
-    const celular = document.getElementById("cel-cadastro").value.trim();
-    const email = document.getElementById("email-cadastro").value.trim();
-    const senha = document.getElementById("senha-cadastro").value;
+    const nome = document.getElementById("nome-cadastro-vend").value.trim();
+    const cnpj = document.getElementById("cnpj-cadastro").value.trim();
+    const celular = document.getElementById("cel-cadastro-vend").value.trim();
+    const email = document.getElementById("email-cadastro-vend").value.trim();
+    const tipoProduto = document.getElementById("tipodeprod").value;
+    const senha = document.getElementById("senha-cadastro-vend").value;
     const confirmarSenha = document.getElementById(
-      "confirmar-senha-cadastro"
+      "confirmar-senha-cadastro-vend"
     ).value;
 
     // Verificações
-    if (!nome) erros.push("O nome completo é obrigatório.");
-    if (!validarCPF(cpf))
-      erros.push("O CPF informado é inválido. Informe apenas números");
-    if (!dataNasc) erros.push("A data de nascimento é obrigatória.");
+    if (!nome) erros.push("O nome da loja é obrigatório.");
+    if (!validarCNPJ(cnpj))
+      erros.push("O CNPJ informado é inválido. Informe apenas númerios.");
     if (!validarCelular(celular))
       erros.push("O número de celular é inválido. Use apenas números.");
     if (!validarEmail(email)) erros.push("O email informado é inválido.");
-    if (!validarSenha(senha))
+    if (!senha || senha.length < 6)
       erros.push("A senha deve ter pelo menos 6 caracteres.");
     if (senha !== confirmarSenha) erros.push("As senhas não coincidem.");
 
@@ -65,10 +64,9 @@ document
       mensagensErro.innerHTML = erros.join("<br>");
     } else {
       mensagensErro.innerHTML = "Cadastro realizado com sucesso!";
-      // Aqui você pode enviar o formulário, se necessário
       console.log("Formulário válido! Enviando...");
 
       // Envia o formulário manualmente
-      //document.getElementById("formCadastro").submit();
+      document.getElementById("formCadastro").submit();
     }
   });
