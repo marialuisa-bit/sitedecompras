@@ -1,4 +1,4 @@
-create database "site de vendas";
+create database site_de_vendas;
 
 create table usuario (
     idusuario integer not null auto_increment primary key,
