@@ -44,7 +44,7 @@
   <body>
     <header id="cabecalho">
       <a href="home.php"> <h1 id="titulo">Site de Compras</h1></a>
-      <a href="carrinho.html">
+      <a href="carrinho.php">
         <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
           id="logo"

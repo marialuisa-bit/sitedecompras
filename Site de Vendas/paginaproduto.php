@@ -2,30 +2,12 @@
 include './conect.php';
 
 session_start();
-if((!isset ($_SESSION['idConta']) != true)){
-  $loginSpace = "<div class=\"card\" id=\"editor-de-conta\" style=\"width: 13rem\">
-  <div class=\"card-header\">Sua Conta</div>
-  <div class=\"card-body\">
-    <h2 class=\"card-title\">Nome</h2>
-    <h3 class=\"card-subtitle\">Tipo de conta</h3>
-
-    <a class=\"btn btn-secondary\" href=\"informacoesconta.php\"
-      >Inforções da conta</a
-    >
-
-    <a class=\"btn btn-secondary\" href=\"login.php\">Trocar de Conta</a>
-
-    <a class=\"btn btn-secondary\" href=\"home.php\">sair da Conta</a>
-  </div>
-</div>";
-} else {
-  $loginSpace = "<a href=\"login.php\" class=\"entrar\" id=\"login\"
-        ><img id=\"icon-login\" src=\"img/icon.png\" alt=\"Login\"
-      /></a>";
-}
-
-  
+if((!isset ($_SESSION['idConta']) == true)){
+    header('location:login.php');
+    exit();
+  }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -56,23 +38,21 @@ if((!isset ($_SESSION['idConta']) != true)){
         >
         </lord-icon>
       </a>
-
       <table id="busca">
         <tr>
           <td>
             <label for="pesquisa"
-              ><a href="paginapesquisa.php"
-                ><lord-icon
-                  id="pesquisa"
-                  src="https://cdn.lordicon.com/kkvxgpti.json"
-                  trigger="hover"
-                  colors="primary:#ffffff"
-                  style="width: 50px; height: 50px"
-                >
-                </lord-icon
-              ></a>
-              ></label
+            ><a href="paginapesquisa.php"
+            ><lord-icon
+              id="pesquisa"
+              src="https://cdn.lordicon.com/kkvxgpti.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style="width: 50px; height: 50px"
             >
+            </lord-icon
+          ></a>
+            ></label>
           </td>
           <td>
             <input
@@ -84,9 +64,6 @@ if((!isset ($_SESSION['idConta']) != true)){
           </td>
         </tr>
       </table>
-      
-      <?php echo "$loginSpace";?>
-
       <nav id="categorias">
         <ul>
           <li><a href="paginapesquisa.php" div class='btn btn-primary'>Eletronicos</a></li>
@@ -96,20 +73,65 @@ if((!isset ($_SESSION['idConta']) != true)){
           <li><a href="paginapesquisa.php" class='btn btn-primary'>Diversos</a></li>
         </ul>
       </nav>
+      <div class="card" id="editor-de-conta" style="width: 13rem">
+        <div class="card-header">Sua Conta</div>
+        <div class="card-body">
+          <h2 class="card-title">Nome</h2>
+          <h3 class="card-subtitle">Tipo de conta</h3>
+
+          <a class="btn btn-secondary" href="informacoesconta.php"
+            >Inforções da conta</a
+          >
+
+          <a class="btn btn-secondary" href="login.php">Trocar de Conta</a>
+
+          <a class="btn btn-secondary" href="home.php">sair da Conta</a>
+        </div>
+      </div>
     </header>
     <main>
       <div id="interface">
-        <section id="corpo">
-          <h2 id="titulo">Produtos em destaque</h2>
-          <figure class="destaques">
-            <table class="produtos">
-
-             <?php 
-             include ".\scriptsphp\criarcard.php"
-             ?>
-            </table>
-          </figure>
-        </section>
+        <table id="pagprod">
+          <tr>
+            <td
+              rowspan="5"
+              style="background-color: aqua"
+              id="img-pagprod"
+            ></td>
+            <td id="nome-pagprod">Nome</td>
+          </tr>
+          <tr>
+            <td id="preco-pagprod">R$ Preço</td>
+          </tr>
+          <tr>
+            <td>
+              <button id="butaocarrinho-pagprod" class="btn btn-primary">
+                Adicionar ao Carrinho
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button id="butaocomprar-pagprod" class="btn btn-secondary">
+                Comprar agora
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td id="quant-pagprod"><div>Quantidade</div></td>
+          </tr>
+          <tr>
+            <td colspan="2" id="descricao-pagprod">
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut
+              </div>
+            </td>
+          </tr>
+        </table>
 
         <footer id="rodape">
           <p>

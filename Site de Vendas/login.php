@@ -1,6 +1,6 @@
 <?php
-include './conect.php';
-include './scriptsphp/funcoes.php';
+include 'conect.php';
+include 'scriptsphp/funcoes.php';
 session_start();
 
 if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
@@ -60,7 +60,7 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
     <header id="cabecalho">
       <a href="home.php">
       <h1 id="titulo">Site de Compras</h1></a>
-      <a href="carrinho.html">
+      <a href="carrinho.php">
         <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
           id="logo"
@@ -74,7 +74,7 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
     </header>
     <main>
       <div id="interface">
-        <div class="card" style="width: 30%">
+        <div class="card" style="width: 30%; margin-bottom: 5rem;">
           <div class="card-header">Login</div>
           <div class="card-body">
             <form method="post">
@@ -99,7 +99,7 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
                   name="senha"
                   required
                 />
-                <a href="trocasenha.html" class="card-subtitle mb-2 text-muted" id="cadastro">Esqueci minha senha</a>
+                <a href="trocasenha.php" class="card-subtitle mb-2 text-muted" id="cadastro">Esqueci minha senha</a>
               </div>
 
               <div>

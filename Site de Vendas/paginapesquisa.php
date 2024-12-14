@@ -2,30 +2,12 @@
 include './conect.php';
 
 session_start();
-if((!isset ($_SESSION['idConta']) != true)){
-  $loginSpace = "<div class=\"card\" id=\"editor-de-conta\" style=\"width: 13rem\">
-  <div class=\"card-header\">Sua Conta</div>
-  <div class=\"card-body\">
-    <h2 class=\"card-title\">Nome</h2>
-    <h3 class=\"card-subtitle\">Tipo de conta</h3>
-
-    <a class=\"btn btn-secondary\" href=\"informacoesconta.php\"
-      >Inforções da conta</a
-    >
-
-    <a class=\"btn btn-secondary\" href=\"login.php\">Trocar de Conta</a>
-
-    <a class=\"btn btn-secondary\" href=\"home.php\">sair da Conta</a>
-  </div>
-</div>";
-} else {
-  $loginSpace = "<a href=\"login.php\" class=\"entrar\" id=\"login\"
-        ><img id=\"icon-login\" src=\"img/icon.png\" alt=\"Login\"
-      /></a>";
+if((!isset ($_SESSION['idConta']) == true)){
+    header('location:login.php');
+    exit();
 }
-
-  
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -56,7 +38,6 @@ if((!isset ($_SESSION['idConta']) != true)){
         >
         </lord-icon>
       </a>
-
       <table id="busca">
         <tr>
           <td>
@@ -71,8 +52,7 @@ if((!isset ($_SESSION['idConta']) != true)){
                 >
                 </lord-icon
               ></a>
-              ></label
-            >
+            </label>
           </td>
           <td>
             <input
@@ -84,9 +64,6 @@ if((!isset ($_SESSION['idConta']) != true)){
           </td>
         </tr>
       </table>
-      
-      <?php echo "$loginSpace";?>
-
       <nav id="categorias">
         <ul>
           <li><a href="paginapesquisa.php" div class='btn btn-primary'>Eletronicos</a></li>
@@ -96,21 +73,86 @@ if((!isset ($_SESSION['idConta']) != true)){
           <li><a href="paginapesquisa.php" class='btn btn-primary'>Diversos</a></li>
         </ul>
       </nav>
+      <div class="card" id="editor-de-conta" style="width: 13rem">
+        <div class="card-header">Sua Conta</div>
+        <div class="card-body">
+          <h2 class="card-title">Nome</h2>
+          <h3 class="card-subtitle">Tipo de conta</h3>
+
+          <a class="btn btn-secondary" href="informacoesconta.php"
+            >Inforções da conta</a
+          >
+
+          <a class="btn btn-secondary" href="login.php">Trocar de Conta</a>
+
+          <a class="btn btn-secondary" href="home.php">sair da Conta</a>
+        </div>
+      </div>
     </header>
     <main>
       <div id="interface">
-        <section id="corpo">
-          <h2 id="titulo">Produtos em destaque</h2>
-          <figure class="destaques">
-            <table class="produtos">
+        <table id="pagvend">
+          <tr>
+            <td colspan="5">
+              <h1 style="text-align: center; margin-bottom: 2rem">
+                Resultados da pesquisa
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="imgvend">
+              <div class="itemvend">
+                <a href="paginaproduto.php"
+                  ><div
+                    style="background-color: black; width: 10rem; height: 10rem"
+                  ></div
+                ></a>
+              </div>
+            </td>
+            <td colspan="3" class="nomevend">Nome do produto</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="precovend">R$1400, 00</td>
+            <td class="dispvend">576 disponiveis</td>
+            <td class="vendidosvend">2760 vendidos</td>
+          </tr>
 
-             <?php 
-             include ".\scriptsphp\criarcard.php"
-             ?>
-            </table>
-          </figure>
-        </section>
-
+          <tr>
+            <td rowspan="2" class="imgvend">
+              <div class="itemvend">
+                <a href="paginaproduto.php"
+                  ><div
+                    style="background-color: black; width: 10rem; height: 10rem"
+                  ></div
+                ></a>
+              </div>
+            </td>
+            <td colspan="3" class="nomevend">Nome do produto</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="precovend">R$1400, 00</td>
+            <td class="dispvend">576 disponiveis</td>
+            <td class="vendidosvend">2760 vendidos</td>
+          </tr>
+        </table>
         <footer id="rodape">
           <p>
             Copyright &copy; 2024 - por Gustavo Beirão e Maria Luisa Gomes<br />

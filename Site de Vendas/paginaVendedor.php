@@ -6,18 +6,17 @@ if((!isset ($_SESSION['idConta']) == true)){
     header('location:login.php');
     exit();
   }
-if($_SESSION['tipoConta'] == "vendedor"){
-  header('location:paginaVendedor.php');
+if($_SESSION['tipoConta'] == "cliente"){
+  header('location:home.php');
     exit();
   }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>home</title>
+    <title>Página do Vendedor</title>
 
     <link rel="stylesheet" type="text/css" href="estilo.css" />
     <link
@@ -29,9 +28,9 @@ if($_SESSION['tipoConta'] == "vendedor"){
   </head>
   <body>
     <header id="cabecalho">
-      <a href="home.php">
+      <a href="paginaVendedor.php">
       <h1 id="titulo">Site de Compras</h1></a>
-      <a href="carrinho.php">
+      
         <script src="https://cdn.lordicon.com/lordicon.js"></script>
         <lord-icon
           id="logo"
@@ -41,7 +40,6 @@ if($_SESSION['tipoConta'] == "vendedor"){
           style="width: 250px; height: 150px"
         >
         </lord-icon>
-      </a>
       <table id="busca">
         <tr>
           <td>
@@ -56,7 +54,7 @@ if($_SESSION['tipoConta'] == "vendedor"){
                 >
                 </lord-icon
               ></a>
-              ></label
+              </label
             >
           </td>
           <td>
@@ -78,6 +76,7 @@ if($_SESSION['tipoConta'] == "vendedor"){
           <li><a href="paginapesquisa.php" class='btn btn-primary'>Diversos</a></li>
         </ul>
       </nav>
+
       <div class="card" id="editor-de-conta" style="width: 13rem">
         <div class="card-header">Sua Conta</div>
         <div class="card-body">
@@ -96,28 +95,18 @@ if($_SESSION['tipoConta'] == "vendedor"){
     </header>
     <main>
       <div id="interface">
-        <table id="carrinho">
+        <table id="pagvend">
           <tr>
-            <td colspan="6">
+            <td colspan="5">
               <h1 style="text-align: center; margin-bottom: 2rem">
-                Seu Carrinho
+                Seu produtos
               </h1>
             </td>
           </tr>
           <tr>
-            <td id="marcadorcarrinho">
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="itemmarcadorcarrinho"
-                  checked
-                />
-              </div>
-            </td>
             <td rowspan="2" class="imgvend">
               <div class="itemvend">
-                <a href="paginaproduto.php"
+                <a href="editordeproduto.php"
                   ><div
                     style="background-color: black; width: 10rem; height: 10rem"
                   ></div
@@ -136,122 +125,119 @@ if($_SESSION['tipoConta'] == "vendedor"){
             </td>
           </tr>
           <tr>
-            <td class="excluircarrinho">
-              <div class="itemvend">
-                <button class="btn btn-danger">Exluir</button>
-              </div>
-            </td>
             <td class="precovend">R$1400, 00</td>
-            <td class="dispvend">Valor unit. R$1400,00</td>
-            <td class="vendidosvend">
-              <input
-                class="form-control"
-                type="number"
-                value="1"
-                style="width: 70%; margin-left: 20%"
-              />
-            </td>
+            <td class="dispvend">576 disponiveis</td>
+            <td class="vendidosvend">2760 vendidos</td>
           </tr>
-          <tr>
-            <td id="marcadorcarrinho">
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="itemmarcadorcarrinho"
-                  checked
-                />
-              </div>
-            </td>
-            <td rowspan="2" class="imgvend">
-              <div class="itemvend">
-                <a href="paginaproduto.php"
-                  ><div
-                    style="background-color: black; width: 10rem; height: 10rem"
-                  ></div
-                ></a>
-              </div>
-            </td>
-            <td colspan="3" class="nomevend">Nome do produto</td>
-            <td rowspan="2" class="descricaovend">
-              <div class="itemvend">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="excluircarrinho">
-              <div class="itemvend">
-                <button class="btn btn-danger">Exluir</button>
-              </div>
-            </td>
-            <td class="precovend">R$1400, 00</td>
-            <td class="dispvend">Valor unit. R$1400,00</td>
-            <td class="vendidosvend">
-              <input
-                class="form-control"
-                type="number"
-                value="1"
-                style="width: 70%; margin-left: 20%"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td id="marcadorcarrinho"></td>
-            <td rowspan="2" class="imgvend"></td>
-            <td colspan="3" class="nomevend">FRETE</td>
-            <td rowspan="2" class="descricaovend">
-              <div class="itemvend">
-                A compra será enviada para o endereço registrado na conta e o
-                pagamento será feito pela conta registrada. Para aterações,
-                modificar diretamente na conta. Isso é uma solução
-                provisoria!!!!
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="excluircarrinho"></td>
 
-            <td colspan="4" class="precovend">R$20,00</td>
-          </tr>
           <tr>
-            <td></td>
-            <td>
-              <div class="form-check" id="divmarcatudo">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="marcatudo"
-                  checked
-                />
-                <label
-                  class="form-check-label"
-                  for="marcatudo"
-                  id="labelmarcatudo"
-                  >Selecionar tudo</label
-                >
+            <td rowspan="2" class="imgvend">
+              <div class="itemvend">
+                <a href="editordeproduto.php"
+                  ><div
+                    style="background-color: black; width: 10rem; height: 10rem"
+                  ></div
+                ></a>
               </div>
             </td>
-            <td colspan="2">
-              <button class="btn btn-danger" id="limparcarrinho">
-                Limpar carrinho
-              </button>
+            <td colspan="3" class="nomevend">Nome do produto</td>
+            <td rowspan="2" class="descricaovend">
+              <div class="itemvend">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
+                consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut
+              </div>
             </td>
-            <td><div id="valortotalcarrinho">Valor total: R$2.820,00</div></td>
-            <td style="display: inline-flex">
-              <button class="btn btn-success" id="comprartudo">
-                Finalizar Compra
-              </button>
-              <input
-                type="text"
-                class="form-control"
-                id="cumpomdesconto"
-                placeholder="Aplique um Cupom!"
-              />
+          </tr>
+          <tr>
+            <td class="precovend">R$1400, 00</td>
+            <td class="dispvend">576 disponiveis</td>
+            <td class="vendidosvend">2760 vendidos</td>
+          </tr>
+          <tr>
+            <td colspan="5" id="cadastrodeprodutos">
+              <div class="card" style="width: 80%">
+                <div class="card-header">Cadastre novos produtos</div>
+                <div class="card-body">
+                  <form action="">
+                    <div class="form-group">
+                      <label for="img-produto">Imagens do produto:</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="img-produto"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="nome-produto">Nome do produto:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nome-produto"
+                        placeholder="Nome do produto"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="categoria-produto">Categoria:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Categoria-produto"
+                        placeholder="categoria"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="preco-produto">Preço:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="preco-produto"
+                        placeholder="Preço (apenas números)"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="quantidade-produto"
+                        >Quantidade de produto:</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="quantidade-produto"
+                        placeholder="Quantidade disponivel do produto"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="descricao-produto"
+                        >Descrição do produto:</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="descricao-produto"
+                        placeholder="Descrição"
+                        rows="3"
+                        required
+                      ></textarea>
+                    </div>
+
+                    <div>
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="gpbtnlogin"
+                      >
+                        Cadastrar novo produto
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </td>
           </tr>
         </table>

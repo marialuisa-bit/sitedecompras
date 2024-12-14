@@ -31,7 +31,7 @@ create table cliente (
 );
 
 create table produto (
-    idproduto integer not null primary key,
+    idproduto integer not null auto_increment primary key,
     imagem varchar(100) not null,
     nome varchar(30) not null,
     qntestoque integer not null,
@@ -59,22 +59,24 @@ create table vendas (
     foreign key(prod) references produto(idproduto)
 );
 
-insert into produto values (1,"img/1.webp", "fone bluetooth", 452, "Alcance: 10m; Tempo de carregamento:1.5h; 4x Borracha de ajuste.", 36.99, 11);
 
-insert into produto values (2, "img/2.webp", "carregador portátil", 551, "tempo de carregamento do Power Bank: 3-5 horas; medida do cabo: 5cm.", 21.19, 22);
 
-insert into produto values (3, "img/3.jfif", "lapis de boca", 65, "marrom avermelhado", 12.65, 33);
+insert into produto values (1,"img/1.webp", "fone bluetooth", 452, "Alcance: 10m; Tempo de carregamento:1.5h; 4x Borracha de ajuste.", 36.99, 1);
 
-insert into produto values (4, "img/4.jfif", "conjunto de brincos", 352 , "3 brincos em formato de estrela com tamanhos variados", 16.99, 44);
+insert into produto values (2, "img/2.webp", "carregador portátil", 551, "tempo de carregamento do Power Bank: 3-5 horas; medida do cabo: 5cm.", 21.19, 2);
 
-insert into produto values (5, "img/5.png", "caneca taylor swift", 5563 , "caneca de cerâmica escrito i *coracao * taylor swift", 45.89, 55);
+insert into produto values (3, "img/3.jfif", "lapis de boca", 65, "marrom avermelhado", 12.65, 3);
 
-insert into produto values (6, "img/6.jpeg", "blusa", 236, "cor: salmão; tamanhos: PP, P, M, G, GG", 26.26, 66);
+insert into produto values (4, "img/4.jfif", "conjunto de brincos", 352 , "3 brincos em formato de estrela com tamanhos variados", 16.99, 4);
 
-insert into produto values (7, "img/7.jpeg", "alexa", 97, "assistente virtual amazon; 2 carregadores", 524.98, 77);
+insert into produto values (5, "img/5.png", "caneca taylor swift", 5563 , "caneca de cerâmica escrito i *coracao * taylor swift", 45.89, 5);
 
-insert into produto values (8, "img/8.jpeg", "lentes de contato", 256, "lentes transparentes, NewLentes", 158.23, 88);
+insert into produto values (6, "img/6.jpeg", "blusa", 236, "cor: salmão; tamanhos: PP, P, M, G, GG", 26.26, 6);
 
-insert into produto values (9, "img/9.jpeg", "tênis", 554, "cor: branco; marca: nike; tamanhos: 37 - 44", 220.00, 99);
+insert into produto values (7, "img/7.jpeg", "alexa", 97, "assistente virtual amazon; 2 carregadores", 524.98, 7);
 
-insert into produto values (10, "img/10.jpeg", "chapinha alisadora", 23, "cor: azul", 142.80, 1010);
+insert into produto values (8, "img/8.jpeg", "lentes de contato", 256, "lentes transparentes, NewLentes", 158.23, 8);
+
+insert into produto values (9, "img/9.jpeg", "tênis", 554, "cor: branco; marca: nike; tamanhos: 37 - 44", 220.00, 9);
+
+insert into produto values (10, "img/10.jpeg", "chapinha alisadora", 23, "cor: azul", 142.80, 10);
