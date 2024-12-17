@@ -100,7 +100,7 @@ VALUES
 (15, 'eletronicos', '10345678000132');
 
 
-insert into produto (idproduto, imagem, nome, estoque, descricao, preco, idusuario)
+insert into produto (idproduto, imagem, nome, qntestoque, descricao, preco, idusuario)
 values
 (1, "img/1.webp", "fone bluetooth", 452, "Alcance: 10m; Tempo de carregamento:1.5h; 4x Borracha de ajuste.", 36.99, 6),
 (2, "img/2.webp", "carregador portátil", 551, "tempo de carregamento do Power Bank: 3-5 horas; medida do cabo: 5cm.", 21.19, 7),
