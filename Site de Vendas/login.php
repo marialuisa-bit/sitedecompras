@@ -9,7 +9,7 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
 
   $user = verificaExisteUser($cpf_cnpjpost);
   if($user == "não existe"){
-    echo "Usuario não encontrado";
+    $mensagemErro = "Usuario não encontrado";
   } else {
       if($user == "vendedor"){
 
@@ -29,14 +29,11 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
         $_SESSION['tipoConta'] = $user;
         if($_SESSION['tipoConta'] == "vendedor"){
             header('location: paginaVendedor.php');
-            exit();
         } else {
             header('location: home.php');
-            exit();
         }
       } else {
-          echo "senha não correspondente";
-          exit();
+          $mensagemErro = "senha não correspondente";
       }
   }
 }
@@ -54,7 +51,6 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script src="js/verificador.js"></script>
   </head>
   <body>
     <header id="cabecalho">
@@ -105,6 +101,9 @@ if(isset($_POST['cpf_cnpj'], $_POST['senha'])){
               <div>
                 <button type="submit" class="btn btn-primary" id="gpbtnlogin">Login</button>
               </div>
+              <div id="mensagensErro" style="color: red">
+            <?php if (isset($mensagemErro)){ echo $mensagemErro;} ?> 
+            </div> <br>
 
               <div class="form-group" style="padding-bottom: 1px">
                 <a href="cadastro.php" class="card-subtitle mb-2 text-muted" id="cadastro">Criar conta como cliente</a>

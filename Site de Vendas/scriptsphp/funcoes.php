@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\site de vendas\conect.php';
+include '../conect.php';
 
 function verificaExisteUser($u) {
     global $connectbd; // Certifique-se de que a variável global de conexão está acessível

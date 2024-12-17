@@ -2,10 +2,28 @@
 include './conect.php';
 
 session_start();
-if((!isset ($_SESSION['idConta']) == true)){
-    header('location:login.php');
-    exit();
-  }
+
+if((!isset ($_SESSION['idConta']) != true)){
+  $loginSpace = "<div class=\"card\" id=\"editor-de-conta\" style=\"width: 13rem\">
+  <div class=\"card-header\">Sua Conta</div>
+  <div class=\"card-body\">
+    <h2 class=\"card-title\">Nome</h2>
+    <h3 class=\"card-subtitle\">Tipo de conta</h3>
+
+    <a class=\"btn btn-secondary\" href=\"informacoesconta.php\"
+      >Inforções da conta</a
+    >
+
+    <a class=\"btn btn-secondary\" href=\"login.php\">Trocar de Conta</a>
+
+    <a class=\"btn btn-secondary\" href=\"home.php\">sair da Conta</a>
+  </div>
+</div>";
+} else {
+  $loginSpace = "<a href=\"login.php\" class=\"entrar\" id=\"login\"
+        ><img id=\"icon-login\" src=\"img/icon.png\" alt=\"Login\"
+      /></a>";
+}
 ?>
 
 
@@ -73,21 +91,7 @@ if((!isset ($_SESSION['idConta']) == true)){
           <li><a href="paginapesquisa.php" class='btn btn-primary'>Diversos</a></li>
         </ul>
       </nav>
-      <div class="card" id="editor-de-conta" style="width: 13rem">
-        <div class="card-header">Sua Conta</div>
-        <div class="card-body">
-          <h2 class="card-title">Nome</h2>
-          <h3 class="card-subtitle">Tipo de conta</h3>
-
-          <a class="btn btn-secondary" href="informacoesconta.php"
-            >Inforções da conta</a
-          >
-
-          <a class="btn btn-secondary" href="login.php">Trocar de Conta</a>
-
-          <a class="btn btn-secondary" href="home.php">sair da Conta</a>
-        </div>
-      </div>
+      <?php echo "$loginSpace";?>
     </header>
     <main>
       <div id="interface">

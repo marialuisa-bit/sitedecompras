@@ -119,7 +119,7 @@
               <div class="form-group">
                 <label for="senha-cadastro">Senha:</label>
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
                   id="senha-cadastro"
                   placeholder="Senha"
@@ -132,7 +132,7 @@
                   >Confirme sua senha:</label
                 >
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
                   id="confirmar-senha-cadastro"
                   placeholder="Confirme sua senha"

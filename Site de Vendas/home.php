@@ -1,7 +1,7 @@
 <?php 
 include './conect.php';
-
 session_start();
+
 if((!isset ($_SESSION['idConta']) != true)){
   $loginSpace = "<div class=\"card\" id=\"editor-de-conta\" style=\"width: 13rem\">
   <div class=\"card-header\">Sua Conta</div>
@@ -101,14 +101,13 @@ if((!isset ($_SESSION['idConta']) != true)){
       <div id="interface">
         <section id="corpo">
           <h2 id="titulo">Produtos em destaque</h2>
-          <figure class="destaques">
-            <table class="produtos">
-
+          <br>
+          <br>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
              <?php 
-             include ".\scriptsphp\criarcard.php"
+             include "./scriptsphp/criarcard.php";
              ?>
-            </table>
-          </figure>
+            </div>
         </section>
 
         <footer id="rodape">

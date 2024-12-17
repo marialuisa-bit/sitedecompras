@@ -69,6 +69,6 @@ document
       console.log("Formulário válido! Enviando...");
 
       // Envia o formulário manualmente
-      //document.getElementById("formCadastro").submit();
+      document.getElementById("formCadastro").submit();
     }
   });

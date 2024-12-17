@@ -124,7 +124,7 @@
               <div class="form-group">
                 <label for="senha-cadastro-vend">Senha:</label>
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
                   id="senha-cadastro-vend"
                   name='senha'
@@ -137,7 +137,7 @@
                   >Confirme sua senha:</label
                 >
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
                   id="confirmar-senha-cadastro-vend"
                   placeholder="Confirme sua senha"
