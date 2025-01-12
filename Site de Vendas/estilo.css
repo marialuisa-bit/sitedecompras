@@ -265,8 +265,17 @@ div#editor-de-conta div.card-body a.btn {
   margin-top: -1.4rem;
 }
 
+#img-pagprod img {
+  width: 80%;
+  height: auto;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 #img-pagprod {
-  width: 60%;
+  width: 40%;
   height: auto;
 }
 
@@ -290,12 +299,13 @@ div#editor-de-conta div.card-body a.btn {
 
 #quant-pagprod {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
 }
 
 #quant-pagprod div {
   margin-top: 0.5rem;
   margin-bottom: 8rem;
+  font-size: 1.1rem;
 }
 
 #descricao-pagprod div {

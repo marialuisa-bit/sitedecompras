@@ -103,10 +103,42 @@ if((!isset ($_SESSION['idConta']) != true)){
           <h2 id="titulo">Produtos em destaque</h2>
           <br>
           <br>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5 g-4">
+
              <?php 
-             include "./scriptsphp/criarcard.php";
+             $card = mysqli_query($connectbd, "select imagem, nome, preco, descricao, idproduto from produto");
+             
+             
+             if(mysqli_num_rows($card) > 0) {
+                 for($i = 1; $i <= 10; $i++){
+                     $result = $card->fetch_assoc();
+                     $imagem = $result["imagem"];
+                     $nome = $result["nome"];
+                     $preco = $result["preco"];
+                     $descricao = $result["descricao"];
+                     $idprod = $result["idproduto"];
+                     echo "
+                     <div class=\"col\">
+                     <div class=\"card h-100\" style=\"width: 14rem;\">
+                     <a href = \"paginaproduto.php?idprod=$idprod\">
+                     <img src=\"$imagem\" class=\"card-img-top\">
+                     </a>
+                     <div class=\"card-body\">
+                         <h5 class=\"card-title\">$nome</h5>
+                         <p class=\"card-subtitle\">R$ $preco</p>
+                         </br>
+                         <p class=\"card-text\">$descricao</p>
+                     </div>
+                     </div>
+                     </div>";}
+             } else {
+                 echo "<br><br><br>
+                       <h1>Nenhum produto encontrado.</h1>
+                       <br>
+                       <h2>Por favor, tente novamente ou entre em contato com o suporte</h2>";
+             }
              ?>
+
             </div>
         </section>
 

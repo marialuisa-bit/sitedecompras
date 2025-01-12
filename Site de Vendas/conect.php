@@ -1,5 +1,5 @@
 <?php
-  // Salvar variaveis de conexão
+  // Salvar variaveis de conecção
 $servername = "localhost";
 $username = "root";
 $password = "";
