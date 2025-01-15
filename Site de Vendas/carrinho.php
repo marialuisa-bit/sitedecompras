@@ -10,6 +10,7 @@ if($_SESSION['tipoConta'] == "vendedor"){
   header('location:paginaVendedor.php');
     exit();
   }
+$valorTotal = 20;
 
 ?>
 
@@ -104,102 +105,84 @@ if($_SESSION['tipoConta'] == "vendedor"){
               </h1>
             </td>
           </tr>
-          <tr>
-            <td id="marcadorcarrinho">
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="itemmarcadorcarrinho"
-                  checked
-                />
-              </div>
+          <?php 
+             $iduser = $_SESSION['idConta'];
+
+             $query = "SELECT * FROM carrinho WHERE idusuario = ?";
+             $stmt = $connectbd->prepare($query);
+             $stmt->bind_param('i', $iduser);
+             $stmt->execute();
+             $carr = $stmt->get_result();
+             $numRows = mysqli_num_rows($carr);
+             
+             if($numRows > 0) {
+                 for($i = 1; $i <= $numRows; $i++){
+                     $result = $carr->fetch_assoc();
+                     $qnt = $result['qntproduto'];
+                     $idprod = $result['idproduto'];
+
+                     $query2 = "select imagem, nome, preco, descricao from produto where idproduto = ?";
+                     $stmt = $connectbd->prepare($query2);
+                     $stmt->bind_param('i', $idprod);
+                     $stmt->execute();
+                     $card = $stmt->get_result();
+
+                     $result2 = $card->fetch_assoc();
+                     $imagem = $result2["imagem"];
+                     $nome = $result2["nome"];
+                     $preco = $result2["preco"];
+                     $descricao = $result2["descricao"];
+
+                     $precoT = $preco * $qnt;
+
+                     $valorTotal = $valorTotal + $precoT;
+                     echo "
+                     <tr>
+            <td id=\"marcadorcarrinho\">
             </td>
-            <td rowspan="2" class="imgvend">
-              <div class="itemvend">
-                <a href="paginaproduto.php"
+            <td rowspan=\"2\" class=\"imgvend\">
+              <div class=\"itemvend\">
+                <a href=\"paginaproduto.php\"
                   ><div
-                    style="background-color: black; width: 10rem; height: 10rem"
-                  ></div
+                    style=\width: 10rem; height: 10rem\"
+                  >
+                  <img src=\"$imagem\">
+                  </div
                 ></a>
               </div>
             </td>
-            <td colspan="3" class="nomevend">Nome do produto</td>
-            <td rowspan="2" class="descricaovend">
-              <div class="itemvend">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut
+            <td colspan=\"3\" class=\"nomevend\">$nome</td>
+            <td rowspan=\"2\" class=\"descricaovend\">
+              <div class=\"itemvend\">
+                $descricao
               </div>
             </td>
           </tr>
           <tr>
-            <td class="excluircarrinho">
-              <div class="itemvend">
-                <button class="btn btn-danger">Exluir</button>
+            <td class=\"excluircarrinho\">
+              <div class=\"itemvend\">
+                <button class=\"btn btn-danger\">Exluir</button>
               </div>
             </td>
-            <td class="precovend">R$1400, 00</td>
-            <td class="dispvend">Valor unit. R$1400,00</td>
-            <td class="vendidosvend">
+            <td class=\"precovend\">R$$precoT</td>
+            <td class=\"dispvend\">Valor unit. R$$preco</td>
+            <td class=\"vendidosvend\">
               <input
-                class="form-control"
-                type="number"
-                value="1"
-                style="width: 70%; margin-left: 20%"
+                class=\"form-control\"
+                type=\"number\"
+                value=\"1\"
+                style=\"width: 70%; margin-left: 20%\"s
               />
             </td>
-          </tr>
-          <tr>
-            <td id="marcadorcarrinho">
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="itemmarcadorcarrinho"
-                  checked
-                />
-              </div>
-            </td>
-            <td rowspan="2" class="imgvend">
-              <div class="itemvend">
-                <a href="paginaproduto.php"
-                  ><div
-                    style="background-color: black; width: 10rem; height: 10rem"
-                  ></div
-                ></a>
-              </div>
-            </td>
-            <td colspan="3" class="nomevend">Nome do produto</td>
-            <td rowspan="2" class="descricaovend">
-              <div class="itemvend">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt utLorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                utLorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="excluircarrinho">
-              <div class="itemvend">
-                <button class="btn btn-danger">Exluir</button>
-              </div>
-            </td>
-            <td class="precovend">R$1400, 00</td>
-            <td class="dispvend">Valor unit. R$1400,00</td>
-            <td class="vendidosvend">
-              <input
-                class="form-control"
-                type="number"
-                value="1"
-                style="width: 70%; margin-left: 20%"
-              />
-            </td>
-          </tr>
+          </tr>";}
+             } else {
+                 echo "<br><br><br>
+                       <h1>Seu carrinho está vazio :(</h1>
+                       <br>
+                       <h2>Experimenta adicionar alguns item</h2>";
+             }
+             ?>
+          
           <tr>
             <td id="marcadorcarrinho"></td>
             <td rowspan="2" class="imgvend"></td>
@@ -208,8 +191,7 @@ if($_SESSION['tipoConta'] == "vendedor"){
               <div class="itemvend">
                 A compra será enviada para o endereço registrado na conta e o
                 pagamento será feito pela conta registrada. Para aterações,
-                modificar diretamente na conta. Isso é uma solução
-                provisoria!!!!
+                modificar diretamente na conta.
               </div>
             </td>
           </tr>
@@ -222,18 +204,6 @@ if($_SESSION['tipoConta'] == "vendedor"){
             <td></td>
             <td>
               <div class="form-check" id="divmarcatudo">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="marcatudo"
-                  checked
-                />
-                <label
-                  class="form-check-label"
-                  for="marcatudo"
-                  id="labelmarcatudo"
-                  >Selecionar tudo</label
-                >
               </div>
             </td>
             <td colspan="2">
@@ -241,7 +211,7 @@ if($_SESSION['tipoConta'] == "vendedor"){
                 Limpar carrinho
               </button>
             </td>
-            <td><div id="valortotalcarrinho">Valor total: R$2.820,00</div></td>
+            <td><div id="valortotalcarrinho">Valor total: R$<?php echo "$valorTotal"; ?></div></td>
             <td style="display: inline-flex">
               <button class="btn btn-success" id="comprartudo">
                 Finalizar Compra

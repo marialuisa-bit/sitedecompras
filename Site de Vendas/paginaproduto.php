@@ -3,7 +3,7 @@ include './conect.php';
 
 session_start();
 
-if((!isset ($_SESSION['idConta']) != true)){
+if(isset ($_SESSION['idConta'])){
   $loginSpace = "<div class=\"card\" id=\"editor-de-conta\" style=\"width: 13rem\">
   <div class=\"card-header\">Sua Conta</div>
   <div class=\"card-body\">
@@ -38,6 +38,9 @@ $qntestoque = $prod["qntestoque"];
 if (isset($_POST['idprod'], $_POST['tipo'])) {
   $iduser = $_SESSION['idConta'];
   $idprod = $_POST['idprod'];
+  $iduser = intval($iduser);
+  $idprod = intval($idprod);
+
 
   // Verifica se o produto já está no carrinho
   $query = "SELECT * FROM carrinho WHERE idusuario = ? AND idproduto = ?";
@@ -49,13 +52,40 @@ if (isset($_POST['idprod'], $_POST['tipo'])) {
   if ($result->num_rows > 0) {
       // Se o produto já estiver no carrinho, apenas vai
       header('location: carrinho.php');
+      exit;
   } else {
       // Se o produto não estiver no carrinho, insere no banco de dados
-      $query = "INSERT INTO carrinho (id_usuario, id_produto, quantidade) VALUES (?, ?, ?)";
+      $query = "INSERT INTO carrinho (idusuario, idproduto, qntproduto) VALUES (?, ?, ?)";
       $stmt = $connectbd->prepare($query);
-      $stmt->bind_param('iii', $iduser, $idprod, 1);
+      $qnt = 1;
+      $stmt->bind_param('iii', $iduser, $idprod, $qnt);
       $stmt->execute();
       header('location: carrinho.php');
+      exit;
+  }
+} elseif (isset($_POST['idprod'])){
+  $iduser = $_SESSION['idConta'];
+  $idprod = $_POST['idprod'];
+  $iduser = intval($iduser);
+  $idprod = intval($idprod);
+
+
+  // Verifica se o produto já está no carrinho
+  $query = "SELECT * FROM carrinho WHERE idusuario = ? AND idproduto = ?";
+  $stmt = $connectbd->prepare($query);
+  $stmt->bind_param('ii', $iduser, $idprod);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  if ($result->num_rows > 0) {
+      // Se o produto já estiver no carrinho, faz nada
+  } else {
+      // Se o produto não estiver no carrinho, insere no banco de dados
+      $query = "INSERT INTO carrinho (idusuario, idproduto, qntproduto) VALUES (?, ?, ?)";
+      $stmt = $connectbd->prepare($query);
+      $qnt = 1;
+      $stmt->bind_param('iii', $iduser, $idprod, $qnt);
+      $stmt->execute();
   }
 }
 ?>
@@ -193,7 +223,7 @@ if (isset($_POST['idprod'], $_POST['tipo'])) {
               </tr>
               <tr>
                 <td>
-                  Você precisa estar logado para poder comprar um produto!
+                  Você precisa estar logado como cliente para poder comprar um produto!
                 </td>
               </tr>
               <tr>
