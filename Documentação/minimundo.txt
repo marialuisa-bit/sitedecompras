@@ -1,0 +1,25 @@
+--> MINIMUNDO
+
+O sistema deverá possuir um cadastro de usuários com autenticação de login.
+O sistema contará com dois tipos distintos de usuários: vendedor e comprador, cada qual com funcionalidades específicas.
+O vendedor poderá adicionar, excluir, consultar e alterar os dados de seus produtos.
+
+O comprador poderá adicionar, excluir, consultar e alterar os produtos no seu carrinho de compras. 
+
+Todos os usuários terão a funcionalidade de pesquisar produtos. A pesquisa permitirá filtros por vendedor, data de publicação e preço.
+
+Para cada usuário, serão armazenados os seguintes dados: senha de login, nome, cidade, bairro, rua, número, complemento, telefone,
+e-mail, agência bancária, conta bancária e código do banco.  
+
+Para um usuário comprador/cliente, será necessário também armazenar a data de nascimento e o CPF.  
+
+Para um usuário vendedor, será necessário registrar o tipo de produto vendido (diversos, eletrônicos, papelaria ou roupas) e o CNPJ.
+
+Os dados do produto incluirão, no mínimo, uma imagem do produto, além de seu nome, quantidade em estoque, descrição,
+preço e o respectivo vendedor.
+
+No carrinho de compras, será necessário armazenar a quem pertence o carrinho (usuário comprador),
+qual produto está incluído e a quantidade dele.
+
+Por fim, o sistema deverá registrar as vendas realizadas, armazenando as quem foi o comprador,
+o produto adquirido e a quantidade comprada.
